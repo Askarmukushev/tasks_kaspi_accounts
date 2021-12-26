@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from decimal import Decimal
+from typing import Optional
 from uuid import UUID, uuid4
 import json
 import random
@@ -13,9 +14,17 @@ class CurrencyMismatchError(ValueError):
 @dataclass
 # Объявление классса Аккаунт (его тела)и его полей - их типы
 class Account:
-    id_: UUID
+    id_: Optional[UUID]
     currency: str
     balance: Decimal
+# Это все часть домашнего задания2
+    #    def save(self):
+    #       if no_id_then_save, then assign_id_
+    #        ...
+    #   def get_objects(self):
+    #       ...
+    #   def delete(self):
+    #        ...
 
     # Инструкция для проверки баланса аккаунтов с условным оператором по признаку совпадения валюты
     def __lt__(self, other: "Account") -> bool:
