@@ -11,14 +11,17 @@ class AccountDatabaseRAM(AccountDatabase):
         super().__init__(*args, **kwargs)
         self._objects = dict()
 
-    def save(self, account: Account) -> None:
+    def _save(self, account: Account) -> None:
         if account.id_ is None:
             # Получить все айдишки которые находятся в объекте
-            list_id = [k for k, v in self._objects.items()]
+            # list_id = [k for k, v in self._objects.items()]
             # Мы получили весь список теперь выведем максимум из него
             account.id_ = uuid4()
 
         self._objects[account.id_] = account.to_json()
+
+    def cleat_all_data(self) -> None:
+        self._objects = dict()
 
     def get_objects(self) -> List[Account]:
         return [Account.from_json(v) for k, v in self._objects.items()]
