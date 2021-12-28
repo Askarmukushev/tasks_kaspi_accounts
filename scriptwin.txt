@@ -1,0 +1,18 @@
+#take project from repository
+git clone https://github.com/Askarmukushev/tasks_kaspi_accounts
+
+#create virtual environment
+C:/Users/amuku/AppData/Local/Programs/Python/Python38/python.exe -m venv venv
+
+cd tasks_kaspi_accounts
+
+source ./venv/Scripts/activate
+
+#example how install pylibrarries with pip
+$ C:/Users/amuku/tasks_kaspi_accounts/venv/Scripts/python.exe -m pip install mypy
+
+
+$ C:/Users/amuku/tasks_kaspi_accounts/venv/Scripts/python.exe -m pip freeze
+
+#for tests pytest in project
+$ C:/Users/amuku/tasks_kaspi_accounts/venv/Scripts/python.exe -m pytest -s
